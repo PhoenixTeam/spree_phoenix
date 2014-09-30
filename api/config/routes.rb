@@ -97,6 +97,10 @@ Spree::Core::Engine.add_routes do
       resources :credit_cards
     end
 
+    resources :users do
+      member do
+        put :generate_api_key
+      end
     end
 
     resources :properties

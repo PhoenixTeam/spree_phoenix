@@ -14,6 +14,14 @@ module Spree
       def new
       end
 
+      def generate_api_key
+        if user.generate_spree_api_key!
+          render json: user
+        else
+          invalid_resource!(user)
+        end
+      end
+
       def create
         authorize! :create, Spree.user_class
         @user = Spree.user_class.new(user_params)

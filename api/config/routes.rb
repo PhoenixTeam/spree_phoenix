@@ -94,7 +94,9 @@ Spree::Core::Engine.add_routes do
     resources :inventory_units, only: [:show, :update]
 
     resources :users do
-      resources :credit_cards, only: [:index]
+      resources :credit_cards
+    end
+
     end
 
     resources :properties
